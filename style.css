@@ -15,5 +15,8 @@
 }
 
 .interactive {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 50px;
 }
