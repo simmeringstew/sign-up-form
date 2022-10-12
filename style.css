@@ -40,7 +40,7 @@
 
 .form-title {
     font-size: 2rem;
-    color: gray;
+    font-weight: 900;
     margin-left: var(--form-left);
     margin-right: var(--form-right);
     padding-bottom: 20px;
@@ -51,5 +51,17 @@
     margin-right: var(--form-right);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 30px;
+}
+
+.form>label {
+    color: gray;
+    margin-bottom: 5px;
+}
+
+.form>input {
+    margin-bottom: 30px;
+    border: solid 1px gray;
+    border-radius: 4px;
+    padding: 10px;
+    margin-right: 200px;
 }
