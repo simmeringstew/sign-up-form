@@ -1,3 +1,19 @@
 :root {
     font-family: 'Poppins', sans-serif;
+    background-color: lightgray;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1.75fr;
+}
+
+.flower-image {
+    background-image: url(images/flowers.svg);
+}
+
+.interactive {
+    background-color: red;
 }
