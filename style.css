@@ -36,6 +36,7 @@
     background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
+    box-shadow: 0px 3px 10px gray;
 }
 
 .form-title {
