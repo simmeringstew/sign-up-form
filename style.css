@@ -20,3 +20,11 @@
     justify-content: space-evenly;
     margin-left: 50px;
 }
+
+.call-to-action-text {
+    font-size: 2rem;
+}
+
+.italic {
+    font-style: italic;
+}
