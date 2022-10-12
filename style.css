@@ -67,3 +67,36 @@
     margin-right: 200px;
     font-size: 1.3rem;
 }
+
+.create-account {
+    margin-left: var(--form-left);
+}
+
+.create {
+    background-color: olive;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.create:active {
+    transform: translateY(2px);
+}
+
+.login {
+    text-decoration: none;
+}
+
+.login:link {
+    color: olive;
+}
+
+.login:visited {
+    color: brown;
+}
