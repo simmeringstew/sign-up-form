@@ -23,12 +23,20 @@ function validateForm() {
     const password = document.querySelector("#password");
     const confirmPassword = document.querySelector("#confirm-password");
     
+    // checks if all elements are present and valid
     const correctFirstName = validateFirstName(firstName);
     const correctLastName = validateLastName(lastName);
     const correctEmail = validateEmail(email);
     const correctPhoneNumber = validatePhoneNumber(phoneNumber);
     const correctPassword = validatePassword(password);
     const correctConfirmPassword = validateConfirmPassword(password, confirmPassword);
+
+    if (correctFirstName === true && correctLastName === true && correctEmail === true && correctPhoneNumber === true && correctPassword === true && correctConfirmPassword === true) {
+        alert("Signup sucessful");
+    }
+    else {
+        return;
+    }
 }
 
 // function to validate whether the entered first name is correct or not
