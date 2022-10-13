@@ -23,7 +23,8 @@ function validateForm() {
     const password = document.querySelector("#password");
     const confirmPassword = document.querySelector("#confirm-password");
     
-    const correctFirstNaame = validateFirstName(firstName);
+    const correctFirstName = validateFirstName(firstName);
+    const correctLastName = validateLastName(lastName);
 }
 
 // function to validate whether the entered first name is correct or not
@@ -34,11 +35,30 @@ function validateFirstName(firstName) {
         firstName.classList.add("incorrect-input");
         firstNameMessage.classList.add("incorrect-message");
         firstNameMessage.textContent = "*Name cannot be blank";
+        return false;
     }
     else {
         firstName.classList.add("correct-input");
         firstNameMessage.classList.add("correct-message");
         firstNameMessage.textContent = "*Valid name";
+        return true;
+    }
+}
+
+// function to validate whether the entered first name is correct or not
+function validateLastName(lastName) {
+    const lastNameMessage = document.querySelector("#last-name-message");
+    const value = lastName.value.trim();
+    if (value === "") {
+        lastName.classList.add("incorrect-input");
+        lastNameMessage.classList.add("incorrect-message");
+        lastNameMessage.textContent = "*Name cannot be blank";
+        return false;
+    }
+    else {
+        lastName.classList.add("correct-input");
+        lastNameMessage.classList.add("correct-message");
+        lastNameMessage.textContent = "*Valid name";
         return true;
     }
 }
