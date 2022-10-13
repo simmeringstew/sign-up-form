@@ -25,6 +25,7 @@ function validateForm() {
     
     const correctFirstName = validateFirstName(firstName);
     const correctLastName = validateLastName(lastName);
+    const correctEmail = validateEmail(email);
 }
 
 // function to validate whether the entered first name is correct or not
@@ -34,13 +35,13 @@ function validateFirstName(firstName) {
     if (value === "") {
         firstName.classList.add("incorrect-input");
         firstNameMessage.classList.add("incorrect-message");
-        firstNameMessage.textContent = "*Name cannot be blank";
+        firstNameMessage.textContent = "*name cannot be blank";
         return false;
     }
     else {
         firstName.classList.add("correct-input");
         firstNameMessage.classList.add("correct-message");
-        firstNameMessage.textContent = "*Valid name";
+        firstNameMessage.textContent = "*valid name";
         return true;
     }
 }
@@ -52,13 +53,37 @@ function validateLastName(lastName) {
     if (value === "") {
         lastName.classList.add("incorrect-input");
         lastNameMessage.classList.add("incorrect-message");
-        lastNameMessage.textContent = "*Name cannot be blank";
+        lastNameMessage.textContent = "*name cannot be blank";
         return false;
     }
     else {
         lastName.classList.add("correct-input");
         lastNameMessage.classList.add("correct-message");
-        lastNameMessage.textContent = "*Valid name";
+        lastNameMessage.textContent = "*valid name";
+        return true;
+    }
+}
+
+function validateEmail(email) {
+    const emailMessage = document.querySelector("#email-message");
+    const value = email.value.trim();
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (value === "") {
+        email.classList.add("incorrect-input");
+        emailMessage.classList.add("incorrect-message");
+        emailMessage.textContent = "*email cannot be blank";
+        return false;
+    }
+    else if (re.test(String(value).toLowerCase()) === false) {
+        email.classList.add("incorrect-input");
+        emailMessage.classList.add("incorrect-message");
+        emailMessage.textContent = "*enter a valid email";
+        return false;
+    }
+    else {
+        email.classList.add("correct-input");
+        emailMessage.classList.add("correct-message");
+        emailMessage.textContent = "*valid email";
         return true;
     }
 }
