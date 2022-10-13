@@ -11,7 +11,7 @@ form.addEventListener("keydown", (e) => {
     else {
         return;
     }
-})
+});
 
 // main function for validating the form
 function validateForm() {
@@ -28,6 +28,7 @@ function validateForm() {
     const correctEmail = validateEmail(email);
     const correctPhoneNumber = validatePhoneNumber(phoneNumber);
     const correctPassword = validatePassword(password);
+    const correctConfirmPassword = validateConfirmPassword(password, confirmPassword);
 }
 
 // function to validate whether the entered first name is correct or not
@@ -138,5 +139,22 @@ function validatePassword(password) {
         passwordMessage.classList.add("correct-message");
         passwordMessage.textContent = "*valid password";
         return true;
+    }
+}
+
+// function to check if passwords match
+function validateConfirmPassword(password, confirmPassword) {
+    const confirmPasswordMessage = document.querySelector("#password-confirm-message");
+    if (password.value.trim() === confirmPassword.value.trim() && confirmPassword.value.trim() !== "") {
+        confirmPassword.classList.add("correct-input");
+        confirmPasswordMessage.classList.add("correct-message");
+        confirmPasswordMessage.textContent = "*passwords match";
+        return true;
+    }
+    else {
+        confirmPassword.classList.add("incorrect-input");
+        confirmPasswordMessage.classList.add("incorrect-message");
+        confirmPasswordMessage.textContent = "*passwords do not match";
+        return false;
     }
 }
