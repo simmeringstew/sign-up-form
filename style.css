@@ -5,15 +5,13 @@
 :root {
     font-family: 'Poppins', sans-serif;
     background-color: lightgray;
-    min-height: 100vh;
     --form-left: 50px;
-    --form-right: 20px;
 }
 
 .wrapper {
     display: grid;
-    height: 100vh;
-    grid-template-columns: 1fr 1.75fr;
+    grid-template-columns: 1fr 2fr;
+    min-height: 100vh;
 }
 
 
@@ -73,13 +71,11 @@
     font-size: 2rem;
     font-weight: 900;
     margin-left: var(--form-left);
-    margin-right: var(--form-right);
     padding-bottom: 20px;
 }
 
 .form {
     margin-left: var(--form-left);
-    margin-right: var(--form-right);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -94,8 +90,8 @@
     border: solid 1px gray;
     border-radius: 4px;
     padding: 5px;
-    margin-right: 200px;
     font-size: 1.3rem;
+    width: 250px;
 }
 
 /* Signup button
@@ -133,4 +129,16 @@
 
 .login:visited {
     color: olive;
+}
+
+/* Signup correct or incorrect
+--------------------------------
+*/
+
+.incorrect {
+    border: solid 1px red;
+}
+
+.correct {
+    border: solid 1px lightgreen;
 }
