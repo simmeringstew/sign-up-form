@@ -139,20 +139,20 @@
 --------------------------------
 */
 
-.incorrect-input {
+.form>input.incorrect-input {
     border: solid 1px red;
 }
 
-.correct-input {
+.form>input.correct-input {
     border: solid 1px lightgreen;
 }
 
-form>small.incorrect-message {
+.form>small.incorrect-message {
     visibility: visible;
     color: red;
 }
 
-form>small.correct-message {
+.form>small.correct-message {
     visibility: visible;
     color: lightgreen;
 }
