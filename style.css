@@ -86,12 +86,16 @@
 }
 
 .form>input {
-    margin-bottom: 30px;
     border: solid 1px gray;
     border-radius: 4px;
     padding: 5px;
     font-size: 1.3rem;
     width: 250px;
+}
+
+.form>small {
+    margin-bottom: 30px;
+    visibility: hidden;
 }
 
 /* Signup button
@@ -135,10 +139,20 @@
 --------------------------------
 */
 
-.incorrect {
+.incorrect-input {
     border: solid 1px red;
 }
 
-.correct {
+.correct-input {
     border: solid 1px lightgreen;
+}
+
+form>small.incorrect-message {
+    visibility: visible;
+    color: red;
+}
+
+form>small.correct-message {
+    visibility: visible;
+    color: lightgreen;
 }
