@@ -27,6 +27,7 @@ function validateForm() {
     const correctLastName = validateLastName(lastName);
     const correctEmail = validateEmail(email);
     const correctPhoneNumber = validatePhoneNumber(phoneNumber);
+    const correctPassword = validatePassword(password);
 }
 
 // function to validate whether the entered first name is correct or not
@@ -111,6 +112,31 @@ function validatePhoneNumber(phoneNumber) {
         phoneNumber.classList.add("correct-input");
         phoneNumberMessage.classList.add("correct-message");
         phoneNumberMessage.textContent = "*valid phone number";
+        return true;
+    }
+}
+
+// function to validate whether the user entered a correct password
+function validatePassword(password) {
+    const passwordMessage = document.querySelector("#password-message");
+    const value = password.value.trim();
+    const re = /^(\S)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹])[a-zA-Z0-9~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]{16,100}$/;
+    if (value === "") {
+        password.classList.add("incorrect-input");
+        passwordMessage.classList.add("incorrect-message");
+        passwordMessage.textContent = "*password cannot be blank";
+        return false;
+    }
+    else if (re.test(String(value)) === false) {
+        password.classList.add("incorrect-input");
+        passwordMessage.classList.add("incorrect-message");
+        passwordMessage.textContent = "*enter a valid password";
+        return false;
+    }
+    else {
+        password.classList.add("correct-input");
+        passwordMessage.classList.add("correct-message");
+        passwordMessage.textContent = "*valid password";
         return true;
     }
 }
