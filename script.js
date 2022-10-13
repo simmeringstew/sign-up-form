@@ -19,13 +19,14 @@ function validateForm() {
     const firstName = document.querySelector("#first-name");
     const lastName = document.querySelector("#last-name");
     const email = document.querySelector("#email");
-    const phoneNumber = document.querySelector("#phoneNumber");
+    const phoneNumber = document.querySelector("#phone-number");
     const password = document.querySelector("#password");
     const confirmPassword = document.querySelector("#confirm-password");
     
     const correctFirstName = validateFirstName(firstName);
     const correctLastName = validateLastName(lastName);
     const correctEmail = validateEmail(email);
+    const correctPhoneNumber = validatePhoneNumber(phoneNumber);
 }
 
 // function to validate whether the entered first name is correct or not
@@ -64,6 +65,7 @@ function validateLastName(lastName) {
     }
 }
 
+// function to validate whether the user has entered a valid email
 function validateEmail(email) {
     const emailMessage = document.querySelector("#email-message");
     const value = email.value.trim();
@@ -84,6 +86,31 @@ function validateEmail(email) {
         email.classList.add("correct-input");
         emailMessage.classList.add("correct-message");
         emailMessage.textContent = "*valid email";
+        return true;
+    }
+}
+
+// function to validate whether the user has entered a valid phone number
+function validatePhoneNumber(phoneNumber) {
+    const phoneNumberMessage = document.querySelector("#phone-number-message");
+    const value = phoneNumber.value.trim();
+    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    if (value === "") {
+        phoneNumber.classList.add("incorrect-input");
+        phoneNumberMessage.classList.add("incorrect-message");
+        phoneNumberMessage.textContent = "*phone number cannot be blank";
+        return false;
+    }
+    else if (re.test(String(value)) === false) {
+        phoneNumber.classList.add("incorrect-input");
+        phoneNumberMessage.classList.add("incorrect-message");
+        phoneNumberMessage.textContent = "*enter a valid phone number";
+        return false;
+    }
+    else {
+        phoneNumber.classList.add("correct-input");
+        phoneNumberMessage.classList.add("correct-message");
+        phoneNumberMessage.textContent = "*valid phone number";
         return true;
     }
 }
