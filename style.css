@@ -1,3 +1,7 @@
+/* Page setup
+--------------------------------
+*/
+
 :root {
     font-family: 'Poppins', sans-serif;
     background-color: lightgray;
@@ -12,6 +16,11 @@
     grid-template-columns: 1fr 1.75fr;
 }
 
+
+/* Left side
+--------------------------------
+*/
+
 .flower-image {
     background-image: url(images/flowers.svg);
     display: flex;
@@ -25,11 +34,19 @@
     font-weight: 900;
 }
 
+/* Right side setup
+--------------------------------
+*/
+
 .interactive {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
+
+/* Call to action
+--------------------------------
+*/
 
 .call-to-action-text {
     font-size: 2rem;
@@ -40,6 +57,10 @@
 .italic {
     font-style: italic;
 }
+
+/* Form
+--------------------------------
+*/
 
 .signup-form {
     background-color: white;
@@ -76,6 +97,10 @@
     margin-right: 200px;
     font-size: 1.3rem;
 }
+
+/* Signup button
+--------------------------------
+*/
 
 .create-account {
     margin-left: var(--form-left);
