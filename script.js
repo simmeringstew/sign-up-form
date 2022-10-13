@@ -13,6 +13,14 @@ form.addEventListener("keydown", (e) => {
     }
 })
 
+// main function for validating the form
 function validateForm() {
-    console.log("clicked");
+    // selectors for all the elements in the form
+    const firstName = document.querySelector("#first-name").value;
+    const lastName = document.querySelector("#last-name").value;
+    const email = document.querySelector("#email").value;
+    const phoneNumber = document.querySelector("#phoneNumber").value;
+    const password = document.querySelector("#password").value;
+    const confirmPassword = document.querySelector("#confirm-password").value;
+    console.log(firstName);
 }
